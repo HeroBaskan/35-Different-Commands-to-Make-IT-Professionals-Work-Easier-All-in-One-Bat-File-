@@ -1,3 +1,6 @@
+Bütün haklar İbrahim Tonca'ya aittir. Ben sadece kendime göre değiştiriyorum.
+
+
 Merhabalar,
 
 IT uzmanlarının günlük işlerini kolaylaştırmak için 35 farklı komutu tek bir .bat dosyasında bir araya getirdim. Bu sayede, yapmak istediğiniz işlemi sadece numarasını yazarak hızlıca gerçekleştirebilirsiniz. Windows yönetimi, sistem bakımı ve ağ yapılandırma gibi temel işlemleri pratik bir şekilde gerçekleştirmek artık çok daha kolay. İster donanım bilgilerini görüntülemek, ister ağ ayarlarını düzenlemek, hatta güvenlik duvarı ve RAM optimizasyonu gibi sistem bakım işlemlerini dahi birkaç tıklama ile yapabilirsiniz.
