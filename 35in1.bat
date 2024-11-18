@@ -45,7 +45,8 @@ echo 31. IP Yapılandırmasını Görüntüle(all)
 echo 32. IP Yapılandırmasını Serbest Bırak(release)
 echo 33. IP Yapılandırmasını Yenile(renew)
 echo 34. Wi-Fi Şifresini Göster
-echo 35. Çık
+echo 35. Kayıt Defteri İncelemesi
+echo 99. Çık
 
 set /p choice=Bir seçenek girin (1-35): 
 
@@ -83,7 +84,8 @@ if "%choice%"=="31" goto IPCONFIG
 if "%choice%"=="32" goto RELEASE_IP
 if "%choice%"=="33" goto RENEW_IP
 if "%choice%"=="34" goto WIFI_PASSWORD
-if "%choice%"=="35" exit
+if "%choice%"=="35" goto REGISTRY_ANALYSIS
+if "%choice%"=="99" exit
 goto MENU
 
 :: Bilgisayar Seri Numarası, Bilgisayar Adı, Marka ve Modelini Göster
@@ -383,4 +385,58 @@ echo Wi-Fi Şifresi:
 set /p wifi=Wi-Fi ağ adını girin: 
 netsh wlan show profile name="%wifi%" key=clear | findstr /i "Key Content"
 pause
+goto MENU
+
+
+:: Kayıt Defteri Incelemesi 
+
+:REGISTRY_ANALYSIS
+
+if not exist "C:\RegistryExports" mkdir "C:\RegistryExports"
+
+:: HKEY_CURRENT_USER (HKCU) Kayitları
+reg export "HKEY_CURRENT_USER\Software" "C:\RegistryExports\HKCU_Software.reg" /y
+reg export "HKEY_CURRENT_USER\Control Panel" "C:\RegistryExports\HKCU_ControlPanel.reg" /y
+reg export "HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\BagMRU" "C:\RegistryExports\HKCU_BagMRU.reg" /y
+reg export "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs" "C:\RegistryExports\HKCU_RecentDocs.reg" /y
+reg export "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist" "C:\RegistryExports\HKCU_UserAssist.reg" /y
+reg export "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" "C:\RegistryExports\HKCU_RunMRU.reg" /y
+
+:: HKEY_USERS Kayitlari
+reg export "HKEY_USERS\.DEFAULT" "C:\RegistryExports\HKEY_USERS_Default.reg" /y
+reg export "HKEY_USERS\S-1-5-21-<UserSID>" "C:\RegistryExports\HKEY_USERS_UserSID.reg" /y
+
+:: HKEY_LOCAL_MACHINE (HKLM) Kayitları
+reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" "C:\RegistryExports\HKLM_TimeZoneInfo.reg" /y
+reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ComputerName" "C:\RegistryExports\HKLM_ComputerName.reg" /y
+reg export "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion" "C:\RegistryExports\HKLM_WindowsVersion.reg" /y
+reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem" "C:\RegistryExports\HKLM_FileSystem.reg" /y
+reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName" "C:\RegistryExports\HKLM_ComputerName_2.reg" /y
+reg export "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" "C:\RegistryExports\HKLM_AutoRun.reg" /y
+
+:: USB Kayitları
+reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB" "C:\RegistryExports\HKLM_USB.reg" /y
+reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBTOR" "C:\RegistryExports\HKLM_USBTOR.reg" /y
+reg export "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Portable Devices\Devices" "C:\RegistryExports\HKLM_Devices.reg" /y
+reg export "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\EMDMgmt" "C:\RegistryExports\HKLM_EMDMgmt.reg" /y
+
+:: Ağ, Ağ Ayarları ve Türevleri Kayitları
+reg export "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList" "C:\RegistryExports\HKLM_NetworkList.reg" /y
+reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Tcpip\Parameters\Interfaces" "C:\RegistryExports\HKLM_NetworkInterfaces.reg" /y
+reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\LanmanServer\Shares" "C:\RegistryExports\HKLM_NetworkShares.reg" /y
+
+:: En Son Erişilen Dosyalar
+reg export "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPIDMRU" "C:\RegistryExports\HKLM_LastVisitedFiles.reg" /y
+reg export "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths" "C:\RegistryExports\HKLM_TypedPaths.reg" /y
+reg export "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" "C:\RegistryExports\HKLM_RunApps.reg" /y
+
+:: Depolama Sistemleri Kayitları
+reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\LanmanServer\Shares" "C:\RegistryExports\HKLM_LanmanShares.reg" /y
+reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Tcpip\Parameters\Interfaces" "C:\RegistryExports\HKLM_TcpIpInterfaces.reg" /y
+
+:: Son
+color 3
+echo Kayitlar "C:\RegistryExports" Konumunda Bulunmaktadır.
+pause
+color 0A
 goto MENU
