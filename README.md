@@ -15,6 +15,12 @@ Bazı özelliklerinin çalışması için Yönetici olarak çalıştırmanız ge
 
 Bir Sonraki Güncellemede Kategori Şeklinde Organize Etmeyi Planlıyorum<br />
 
+Güncel Versiyon Ekran Görüntüsü:<br />
+![SS](https://github.com/user-attachments/assets/f1654d81-b202-4ba5-b76c-bd4d6c81f9e4)
+
+
+-Orijinal Açıklama-
+
 Merhabalar,
 
 IT uzmanlarının günlük işlerini kolaylaştırmak için 35 farklı komutu tek bir .bat dosyasında bir araya getirdim. Bu sayede, yapmak istediğiniz işlemi sadece numarasını yazarak hızlıca gerçekleştirebilirsiniz. Windows yönetimi, sistem bakımı ve ağ yapılandırma gibi temel işlemleri pratik bir şekilde gerçekleştirmek artık çok daha kolay. İster donanım bilgilerini görüntülemek, ister ağ ayarlarını düzenlemek, hatta güvenlik duvarı ve RAM optimizasyonu gibi sistem bakım işlemlerini dahi birkaç tıklama ile yapabilirsiniz.
