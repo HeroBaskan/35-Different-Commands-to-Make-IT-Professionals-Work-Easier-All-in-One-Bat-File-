@@ -1,9 +1,15 @@
 Bütün haklar İbrahim Tonca'ya aittir. Ben sadece kendime göre değiştiriyorum.
 
 Eklenenler:<br />
-35. Kayıt Defteri Incelemesi için Verileri Dışarı Aktarmak <br />
+35. Kayıt Defteri Incelemesi için Verileri Dışarı Aktarmak. <br />
 36. getmac; ipconfig Ayarlarının yanında eksik olmasın. <br />
-98. CLS, Ekranı Temizlemek için.
+37. Sürücülerin SMART Durumunu Öğrenme.  <br />
+38. Aktif Olarak Kullanılan / Kullanılmaya Hazır Ekran Kartları <br />
+39. Tasklist <br />
+40. Zamanlanmış Görevler  <br />
+41. Wifi Detayları <br />
+42. Güç Tüketimi Analizi <br />
+98. CLS, Ekranı Temizlemek için. <br />
 
 
 Merhabalar,

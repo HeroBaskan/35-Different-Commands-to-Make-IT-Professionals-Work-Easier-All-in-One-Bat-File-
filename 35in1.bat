@@ -47,7 +47,15 @@ echo 33. IP Yapılandırmasını Yenile(renew)
 echo 34. Wi-Fi Şifresini Göster
 echo 35. Kayıt Defteri İncelemesi
 echo 36. MAC Adresi Öğrenme
+echo 37. Sürücülerin SMART Durumu
+echo 38. Aktif Ekran Kartı Modeli Öğrenme
+echo 39. Çalışan Programlar, Görevler. (Tasklist, Ayrı Pencerede Açılır)
+echo 40. Zamanlanmış Görevleri Listele
+echo 41. WI-FI Detayları
+echo 42. Güç Tüketimi Analizi
+
 echo.
+echo 97. Sistem Geri Yükleme Noktası Oluştur
 echo 98. Ekranı Temizle (CLS)
 echo 99. Çık
 echo.
@@ -89,6 +97,15 @@ if "%choice%"=="33" goto RENEW_IP
 if "%choice%"=="34" goto WIFI_PASSWORD
 if "%choice%"=="35" goto REGISTRY_ANALYSIS
 if "%choice%"=="36" goto GET_MAC
+if "%choice%"=="37" goto SMART_STATUS
+if "%choice%"=="38" goto GPU_MODEL
+if "%choice%"=="39" goto TASK_LIST
+if "%choice%"=="40" goto SCHEDULED_TASK
+if "%choice%"=="41" goto WIFI_BROADCAST
+if "%choice%"=="42" goto POWERCFG_ENERGY
+
+
+if "%choice%"=="97" goto RESTORE_POINT
 if "%choice%"=="98" goto CLEAN
 if "%choice%"=="99" exit
 goto MENU
@@ -476,3 +493,55 @@ color 04
 goto SILBASTAN
 pause
 
+
+:: SMART Durumu
+:SMART_STATUS
+wmic diskdrive get status
+echo.
+pause
+goto MENU
+
+
+:: GPU Model
+:GPU_MODEL
+wmic path win32_VideoController get name
+echo.
+pause
+goto MENU
+
+
+:: Tasklist
+:TASK_LIST
+start cmd /c "tasklist & pause"
+pause
+echo.
+goto MENU
+
+:: Yedekleme ve Geri Yükleme Noktası
+:RESTORE_POINT
+powershell -Command "Checkpoint-Computer -Description 'AIO Tarafından Oluşturuldu' -RestorePointType MODIFY_SETTINGS"
+pause
+echo.
+goto MENU
+
+
+:: Zamanlanmış Görevleri Göster
+:SCHEDULED_TASK
+schtasks /query /fo LIST /v
+pause
+echo.
+goto MENU
+
+:: Güç Tüketimini Analiz Et
+:POWERCFG_ENERGY
+powercfg /energy
+pause
+echo.
+goto MENU
+
+:: WI-FI Detayları
+:WIFI_BROADCAST
+netsh wlan show networks mode=bssid
+pause
+echo.
+goto MENU
