@@ -1,5 +1,11 @@
 Bütün haklar İbrahim Tonca'ya aittir. Ben sadece kendime göre değiştiriyorum.
 
+Eklenenler:
+35. Kayıt Defteri Incelemesi için Verileri Dışarı Aktarmak
+36. getmac; ipconfig Ayarlarının yanında eksik olmasın.
+
+98. CLS, Ekranı Temizlemek için.
+
 
 Merhabalar,
 
