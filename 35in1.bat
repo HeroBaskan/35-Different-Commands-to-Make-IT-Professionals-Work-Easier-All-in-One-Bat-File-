@@ -46,9 +46,12 @@ echo 32. IP Yapılandırmasını Serbest Bırak(release)
 echo 33. IP Yapılandırmasını Yenile(renew)
 echo 34. Wi-Fi Şifresini Göster
 echo 35. Kayıt Defteri İncelemesi
+echo 36. MAC Adresi Öğrenme
+echo.
+echo 98. Ekranı Temizle (CLS)
 echo 99. Çık
-
-set /p choice=Bir seçenek girin (1-35): 
+echo.
+set /p choice=Bir seçenek girin (1-99): 
 
 if "%choice%"=="1" goto COMPUTER_INFO
 if "%choice%"=="2" goto IP
@@ -85,8 +88,30 @@ if "%choice%"=="32" goto RELEASE_IP
 if "%choice%"=="33" goto RENEW_IP
 if "%choice%"=="34" goto WIFI_PASSWORD
 if "%choice%"=="35" goto REGISTRY_ANALYSIS
+if "%choice%"=="36" goto GET_MAC
+if "%choice%"=="98" goto CLEAN
 if "%choice%"=="99" exit
 goto MENU
+
+:SILBASTAN
+echo Ekranı Temizleyelim (CLS)?
+echo 1. Evet
+echo 2. Hayır
+
+set /p choice1=Bir seçenek girin (1-2):
+
+if "%choice1%"=="1" goto CLEAN
+if "%choice1%"=="2" echo.
+color 0A
+goto MENU
+
+
+:CLEAN
+cls
+color 0A
+goto MENU
+
+
 
 :: Bilgisayar Seri Numarası, Bilgisayar Adı, Marka ve Modelini Göster
 :COMPUTER_INFO
@@ -440,3 +465,14 @@ echo Kayitlar "C:\RegistryExports" Konumunda Bulunmaktadır.
 pause
 color 0A
 goto MENU
+
+
+
+:: MAC Adresi
+:GET_MAC
+getmac
+echo.
+color 04
+goto SILBASTAN
+pause
+
