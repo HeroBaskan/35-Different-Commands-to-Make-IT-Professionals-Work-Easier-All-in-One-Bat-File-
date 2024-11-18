@@ -11,7 +11,9 @@ Eklenenler:<br />
 42. Güç Tüketimi Analizi <br />
 98. CLS, Ekranı Temizlemek için. <br />
 
-Bazı özelliklerinin çalışması için Yönetici olarak çalıştırmanız gerekebilir. Bunun için Sağ Click yaparak ulaşabilirsiniz.
+Bazı özelliklerinin çalışması için Yönetici olarak çalıştırmanız gerekebilir. Bunun için Sağ Click yaparak ulaşabilirsiniz. <br />
+
+Bir Sonraki Güncellemede Kategori Şeklinde Organize Etmeyi Planlıyorum<br />
 
 Merhabalar,
 
