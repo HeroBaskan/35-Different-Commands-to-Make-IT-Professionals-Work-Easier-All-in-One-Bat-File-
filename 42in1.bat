@@ -19,7 +19,7 @@ echo ****************************************
 cls
 
 echo ****************************************
-echo    HIZLI YARDIM ARACI - İBRAHİM TONCA
+echo    HIZLI YARDIM ARACI - İBRAHİM TONCA - HeroBaskan
 echo ****************************************
 
 
