@@ -15,7 +15,7 @@ Eklenenler:<br />
 
 Bazı özelliklerinin çalışması için Yönetici olarak çalıştırmanız gerekebilir. Bunun için Sağ Click yaparak ulaşabilirsiniz. <br />
 
-Bir Sonraki Güncellemede Kategori Şeklinde Organize Etmeyi Planlıyorum<br />
+Bir Sonraki Güncellemede Ingilizce ve Bir Kaç Tane Hayat Kolaylaştıracak Komutlar Eklemeyi Planlıyorum<br />
 
 Güncel Versiyon Ekran Görüntüsü:<br />
 ![image](https://github.com/user-attachments/assets/0460723f-06c9-4100-b170-03617c28baea)
