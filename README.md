@@ -17,6 +17,8 @@ Bazı özelliklerinin çalışması için Yönetici olarak çalıştırmanız ge
 Bir Sonraki Güncellemede Kategori Şeklinde Organize Etmeyi Planlıyorum<br />
 
 Güncel Versiyon Ekran Görüntüsü:<br />
+![image](https://github.com/user-attachments/assets/0460723f-06c9-4100-b170-03617c28baea)
+
 ![SS](https://github.com/user-attachments/assets/f1654d81-b202-4ba5-b76c-bd4d6c81f9e4)
 
 
