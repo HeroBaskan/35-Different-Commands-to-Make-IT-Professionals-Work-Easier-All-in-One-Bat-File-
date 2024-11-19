@@ -199,6 +199,7 @@ goto ANAMENU
 :: Eski Menü
 
 :MENU
+cls
 echo 1. Bilgisayar Seri Numarasını, Adını, Marka ve Modelini Göster
 echo 2. IP Adresini Görüntüle
 echo 3. Windows Lisans Durumunu Göster
