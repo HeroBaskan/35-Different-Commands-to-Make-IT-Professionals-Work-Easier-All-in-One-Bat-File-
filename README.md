@@ -9,6 +9,7 @@ Eklenenler:<br />
 40. Zamanlanmış Görevler  <br />
 41. Wifi Detayları <br />
 42. Güç Tüketimi Analizi <br />
+96. Eski Menü
 97. Sistem Geri Yükleme Noktası Oluşturma <br />
 98. CLS, Ekranı Temizlemek için. <br />
 
