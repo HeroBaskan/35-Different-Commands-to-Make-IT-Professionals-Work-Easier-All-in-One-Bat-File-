@@ -180,6 +180,7 @@ goto ANAMENU
 echo 1. Çalışan programları ve görevleri listele
 echo 2. Zamanlanmış görevleri listele
 echo 3. Güç tüketimi analizi
+echo 4. Kayıt Defteri Incelemesi
 echo 99. Menü
 
 set /p choice=Bir seçenek girin (1-99):
@@ -189,6 +190,7 @@ if "%choice%"=="1" goto TASK_LIST
 if "%choice%"=="2" goto SCHEDULED_TASK
 if "%choice%"=="3" goto POWERCFG_ENERGY
 if "%choice%"=="99" goto ANAMENU
+if "%choice%"=="4" goto REGISTRY_ANALYSIS
 goto ANAMENU
 
 
