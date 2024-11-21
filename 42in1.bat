@@ -334,7 +334,7 @@ echo.
 echo Marka ve Model:
 wmic computersystem get manufacturer, model
 pause
-goto  
+goto ANAMENU 
 
 :: IP Adresini Görüntüle
 :IP
