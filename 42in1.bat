@@ -246,6 +246,7 @@ echo 41. WI-FI Detayları
 echo 42. Güç Tüketimi Analizi
 
 echo.
+echo 96. Yeni Menü
 echo 97. Sistem Geri Yükleme Noktası Oluştur
 echo 98. Ekranı Temizle (CLS)
 echo 99. Çık
@@ -295,7 +296,7 @@ if "%choice%"=="40" goto SCHEDULED_TASK
 if "%choice%"=="41" goto WIFI_BROADCAST
 if "%choice%"=="42" goto POWERCFG_ENERGY
 
-
+if "%choice%"=="96" goto ANAMENU
 if "%choice%"=="97" goto RESTORE_POINT
 if "%choice%"=="98" goto CLEAN
 if "%choice%"=="99" exit
@@ -682,10 +683,8 @@ goto ANAMENU
 :GET_MAC
 getmac
 echo.
-color 04
-goto SILBASTAN
 pause
-
+goto ANAMENU
 
 :: SMART Durumu
 :SMART_STATUS
